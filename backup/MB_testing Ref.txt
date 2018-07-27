@@ -4,4 +4,3 @@ FCM
 3.Start all services BNK/CHECK.FILTER.STATUS.SERVICE, BNK/INTEGRATION.SERVICE, BNK/PAYMENT.STPFLOW.HEAVY, BNK/PP.ACCEPT.MAP.SERVICE, BNK/OFS.MESSAGE.SERVICE
 3.Launch FCM URL and check http://localhost:9180/vrisk/app/   if R19 please check and commit following record  TPS.INTERNAL.CONFIGS, A SYNCDATES
 4.  True Hit   PP.ORDER.ENTRY,CTR.OUT.CREATE I F3 
-5.Verify The customer
