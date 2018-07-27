@@ -1,0 +1,76 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 1.5-Design-Bank-COS
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _bkBhEM2_EeeIz8LB-avO3Q
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 11/23/17 4:13 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Package Explorer" | get-tree | select "BRP-models/L3" | get-menu "New/New Composite Screen..." | click
+with [get-window "New Composite Screen"] {
+    get-editbox -after [get-label "T24 Name :"] | set-text "RCPTT.TEST.COS"
+    get-button Finish | click
+}
+get-editor "RCPTT.TEST.COS.eson" | get-tree | get-item "Composite Screen RCPTT.TEST.COS" | click
+with [get-view Properties] {
+    click
+    get-section Properties | get-button "Add a new element" -after [get-label "Panels :"] | click
+}
+with [get-window Translation] {
+    get-group Properties | get-editbox -after [get-label "Value:"] | set-text "RCPTT COS Test"
+    get-button Finish | click
+}
+get-view Properties | get-section Properties | get-button "Add a new element" | click
+with [get-window panels] {
+    get-button "Next >" | click
+    with [get-group Properties] {
+        get-editbox -after [get-label "Name:"] | set-text Panel1
+        get-button "..." | click
+    }
+}
+with [get-window initialContent] {
+    get-button InitialEnquiry | click
+    get-button "Next >" | click
+    get-group Properties | get-button "..." | click
+    with [get-window "Open Model Element"] {
+        get-editbox -after [get-label "Enter element name prefix or pattern (*, ?, or camel case):"] 
+            | set-text "*RCPTT.TEST.ENQ"
+        get-table | select "RCPTT.TEST.ENQ - Enquiry" | double-click
+    }
+    get-button Finish | click
+}
+get-window panels | get-button Finish | click
+get-view Properties | get-section Properties | get-button "Add a new element" | click
+with [get-window panels] {
+    get-button "Next >" | click
+    with [get-group Properties] {
+        get-editbox -after [get-label "Name:"] | set-text Panel2
+        get-button "..." | click
+    }
+}
+with [get-window initialContent] {
+    get-button InitialScreen | click
+    get-button "Next >" | click
+    get-group Properties | get-button "..." | click
+    with [get-window "Open Model Element"] {
+        get-editbox -after [get-label "Enter element name prefix or pattern (*, ?, or camel case):"] 
+            | set-text "*CUSTOMER,RCPTT"
+        get-table | select "CUSTOMER,RCPTT.TEST.VI - Version" | double-click
+    }
+    get-button Finish | click
+}
+get-window panels | get-button Finish | click
+with [get-editor "RCPTT.TEST.COS.eson" | get-tree] {
+    get-item "Composite Screen RCPTT.TEST.COS" | click
+    key-type "M1+s"
+    key-type "M1+g"
+}
+get-view Console | get-text-viewer | get-property "getText()" | contains "EB.COMPOSITE.SCREEN!RCPTT.TEST.COS.data.eson SUCCEEDED" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

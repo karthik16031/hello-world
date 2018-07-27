@@ -1,0 +1,39 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: __DL28A4VEeeD3qAutfrA1Q,_LWy4IA-LEeeuwuUxaWO-Zg
+Element-Name: 1.1-Design-Bank-ImportProject
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _eEma8M-BEeedWPV_9eS8yQ
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 4/5/18 11:19 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-menu "File/Open Projects from File System..." | click
+set-dialog-result Folder $Workspace_Home
+with [get-window "Import Projects from File System or Archive"] {
+    get-button "Directory..." | click
+    get-button Finish | click
+}
+get-view Servers | get-tree | select "T24 Connection ( t24-localhost-tafj-server )" 
+    | get-menu "Add\\/Remove Project(s)" | click
+with [get-window "Add/Remove Projects"] {
+    with [get-tree] {
+        select "BRP-data-code"
+        get-item "BRP-data-code" | check
+        get-item "BRP-models-gen" | check
+    }
+    get-button OK | click
+     
+}
+get-view Servers | get-tree | select "T24 Connection ( t24-localhost-tafj-server )" | get-menu "Start \\/ Restart" 
+    | click
+wait -ms 300000
+get-view Console | get-text-viewer | get-property "getText()" 
+    | contains "started" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

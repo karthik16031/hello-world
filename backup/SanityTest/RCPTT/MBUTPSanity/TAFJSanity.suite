@@ -1,0 +1,25 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: TAFJSanity
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _tga7AA7qEeecOIdlqcuROw
+Manually-Ordered: true
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 4/18/18 12:02 PM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+_w0908A7qEeecOIdlqcuROw	// kind: 'test' name: '4.1-TAFJ-CreateProject' path: '4.1-TAFJ-CreateProject.test'
+_HqtVAA-YEeeuwuUxaWO-Zg	// kind: 'test' name: '4.2-TAFJ-ExecuteJED' path: '4.2-TAFJ-ExecuteJED.test'
+_yJiTkA-MEeeuwuUxaWO-Zg	// kind: 'test' name: '4.3-TAFJ-ExecuteJQL' path: '4.3-TAFJ-ExecuteJQL.test'
+_Qtn2EA-PEeeuwuUxaWO-Zg	// kind: 'test' name: '4.4-TAFJ-ExecuteJQLtoSQL' path: '4.4-TAFJ-ExecuteJQLtoSQL.test'
+_CCoK0A-bEeeuwuUxaWO-Zg	// kind: 'test' name: '4.8-TAFJ-ExecuteLoadDB' path: '4.8-TAFJ-ExecuteLoadDB.test'
+_qopNoA-PEeeuwuUxaWO-Zg	// kind: 'test' name: '4.5-TAFJ-ExecuteOFS' path: '4.5-TAFJ-ExecuteOFS.test'
+_8wVoQA-OEeeuwuUxaWO-Zg	// kind: 'test' name: '4.6-TAFJ-ExecuteSQL' path: '4.6-TAFJ-ExecuteSQL.test'
+_M4YzcA-bEeeuwuUxaWO-Zg	// kind: 'test' name: '4.7-TAFJ-ExtractData' path: '4.7-TAFJ-ExtractData.test'
+_Vm3lcCHaEeij285ifX0eVA	// kind: 'test' name: '4.9-TAFJ-CompileProgram' path: '4.9-TAFJ-CompileProgram.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

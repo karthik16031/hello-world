@@ -1,0 +1,27 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 4.9-TAFJ-CompileProgram
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _Vm3lcCHaEeij285ifX0eVA
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/16/18 7:17 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+
+
+get-view "Package Explorer" | get-tree | select "tafj/basic" | get-menu "Compile Basic folder" | click
+//get-view Console | get-text-viewer | set-caret-pos 3 1
+Wait 9000
+
+get-view Console | get-text-viewer | get-property "getText()" | contains "OK" | verify-true
+
+//get-eclipse-window | get-object | save-screenshot "D:\\SanityTest\\RCPTT\\RCPTT\\Results\\sh\\aa1.png" 
+
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

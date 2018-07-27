@@ -1,0 +1,22 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.parameters
+Element-Name: ProjectParameters
+Element-Type: context
+Element-Version: 2.0
+Id: _LWy4IA-LEeeuwuUxaWO-Zg
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 5/15/18 5:48 AM
+
+------=_.parameters.context-2e023de5-3294-36a9-ac1d-6701f05a40ee
+Content-Type: text/properties
+Entry-Name: .parameters.context
+
+#Tue May 15 05:48:54 UTC 2018
+TAFJ_HOME=C\:\\ModelBank\\InstallPackageOutput\\Temenos\\R19\\Env\\Slot01\\Products\\TAFJ\\Default
+Workspace_Home=C\:\\ModelBank\\InstallPackageOutput\\Temenos\\R19\\Env\\Slot01\\Products\\DesignStudio\\workspace
+DBTools_User=t24user
+TWS_War=C\:\\ModelBank\\TestPackage\\RCPTT\\rcptt\\Results\\MBUTPTWSProject.war
+DBTools_Password=t24User123\!
+
+------=_.parameters.context-2e023de5-3294-36a9-ac1d-6701f05a40ee--

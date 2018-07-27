@@ -1,0 +1,36 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 1.6-Design-Bank-DataEson
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _r2KWAM3DEeeIz8LB-avO3Q
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/9/18 4:23 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Package Explorer" | get-tree | select "BRP-data-code/src/Data/Public/GB0010001.CURRENCY!EUR.data.eson" 
+    | double-click
+with [get-editor "GB0010001.CURRENCY!EUR.data.eson" | get-text-viewer] {
+    set-caret-pos 10 29
+    type-text "-Test"
+    key-type "M1+s"
+}
+get-view Console | get-text-viewer | get-property "getText()" 
+    | contains "SUCC" | verify-true
+get-eclipse-window | key-type "" "\\u0000"
+with [get-editor "GB0010001.CURRENCY!EUR.data.eson" | get-text-viewer] {
+    set-caret-pos 17 35
+    key-type "" "\\u0000"
+    type-text "-Test"
+    key-type "" "\\u0000"
+    key-type "M1+s"
+}
+get-view Console | get-text-viewer | get-property "getText()" 
+    | contains "FAIL" | verify-true
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

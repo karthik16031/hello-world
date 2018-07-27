@@ -1,0 +1,24 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 4.3-TAFJ-ExecuteJQL
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _yJiTkA-MEeeuwuUxaWO-Zg
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 11/23/17 4:19 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Package Explorer" | get-tree | select tafj | get-menu "JQL - SQL - OFS" | click
+with [get-editor "JQL - SQL - OFS" | get-group Request | get-editbox] {
+    set-text "CLEAR-FILE F.TSA.STATUS"
+    key-type Enter
+}
+get-editor "JQL - SQL - OFS" | get-table -index 1 
+    | get-item "Execute of CLEAR-FILE F.TSA.STATUS  succeded with output: " | get-property "getText()" 
+    | equals "Execute of CLEAR-FILE F.TSA.STATUS  succeded with output:" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
